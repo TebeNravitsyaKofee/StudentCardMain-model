@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="StudentCard.View.CreateLoadView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:StudentCard.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="650">
+    <Border BorderThickness="4" BorderBrush="Black">
+        <Grid Height="auto" Width="auto" Background="#FFDEEBF6">
+            <ComboBox HorizontalAlignment="Left" Margin="25,40,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Выбрать группу"/>
+            <ComboBox HorizontalAlignment="Left" Margin="170,40,0,0" VerticalAlignment="Top" Width="135" materialDesign:HintAssist.Hint="Выбрать дисциплину"/>
+
+            <Grid HorizontalAlignment="Left" Height="240" Margin="25,95,0,0" VerticalAlignment="Top" Width="280" Background="White">
+                <TextBox Name="test" HorizontalAlignment="Left" Height="23" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Число недель"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные"/>
+                <ComboBox HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Вид п/а" Height="26"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Семестр 1" VerticalAlignment="Top"/>
+
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="240" Margin="345,95,0,0" VerticalAlignment="Top" Width="280" Background="White">
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Число недель"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" materialDesign:HintAssist.Hint="Часов на экзамены и консультации"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные"/>
+                <ComboBox HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Вид п/а"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Семестр 2" VerticalAlignment="Top"/>
+            </Grid>
+            <Button Content="Сохранить" HorizontalAlignment="Left" Margin="25,355,0,0" VerticalAlignment="Top" Width="144" Background="#FF5B9BD5" Click="Button_Click"/>
+
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,61 @@
+﻿<Window x:Class="StudentCard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:StudentCard.ViewModel"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:StudentCard"
+        xmlns:local1="clr-namespace:StudentCard.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1024">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <Grid Grid.Column="0" Height="auto" Width="auto" Background="#FF1E4E79">
+            <StackPanel>
+                <Expander Header="Расписание" Height="auto" Background="#FF5B9BD5" IsExpanded="True">
+                    <StackPanel>
+                        <Button Content="Общее расписание" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="auto" Height="50" Command="{Binding FullTimetableViewCommand}" Background="#FF00B0F0"/>
+                        <Button Content="Динамическое расписание" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="auto" Height="50" Command="{Binding TodayTimetableViewCommand}" Background="#FF0070C0" FontSize="12"/>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Оценки" Height="auto" Background="#FF5B9BD5" IsExpanded="True" >
+                    <StackPanel>
+                        <Button Content="Оценки итоовые" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="auto" Height="50" Background="#FF00B0F0" Command="{Binding JournalViewCommand}"/>
+                        <Button Content="Оценки " HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="auto" Height="50" Background="#FF0070C0" Command="{Binding GroupJournalViewCommand}"/>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Преподаватели" Height="auto" Background="#FF5B9BD5" IsExpanded="True">
+                    <StackPanel>
+                        <Button Content="Нагрузка" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="auto" Height="50" Command="{Binding LoadViewCommand}" Background="#FF00B0F0"/>
+                        <Button Content="Список" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="auto" Height="50" Command="{Binding TeacherListViewCommand}" Background="#FF0070C0"/>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Группы" Height="auto" Background="#FF5B9BD5" IsExpanded="True">
+                    <StackPanel>
+                        <Button Content="Нагрузка" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="auto" Height="50" Command="{Binding GroupViewCommand}" Background="#FF00B0F0"/>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1" Height="auto" Width="auto" Background="Azure">
+            <ContentControl  Background="Red" Content="{Binding CurrentView}" Grid.Column="1"/>
+        </Grid>
+
+        
+    </Grid>
+
+</Window>

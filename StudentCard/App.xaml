@@ -1,0 +1,43 @@
+﻿<Application x:Class="StudentCard.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:StudentCard"
+             xmlns:viewModel="clr-namespace:StudentCard.ViewModel"
+             xmlns:view="clr-namespace:StudentCard.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:FullTimetableViewModel}">
+                <view:FullTimetableView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:TodayTimetableViewModel}">
+                <view:TodayTimetableView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:GroupJournalViewModel}">
+                <view:GroupJournalView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:JournalViewModel}">
+                <view:JournalView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:LoadViewModel}">
+                <view:LoadView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:TeacherListViewModel}">
+                <view:TeacherListView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:GroupViewModel}">
+                <view:GroupView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:CreateLoadViewModel}">
+                <view:CreateLoadView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
