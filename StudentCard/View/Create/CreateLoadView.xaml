@@ -9,23 +9,23 @@
              d:DesignHeight="400" d:DesignWidth="650">
     <Border BorderThickness="4" BorderBrush="Black">
         <Grid Height="auto" Width="auto" Background="#FFDEEBF6">
-            <ComboBox HorizontalAlignment="Left" Margin="25,40,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Выбрать группу"/>
-            <ComboBox HorizontalAlignment="Left" Margin="170,40,0,0" VerticalAlignment="Top" Width="135" materialDesign:HintAssist.Hint="Выбрать дисциплину"/>
+            <ComboBox x:Name="group_cb" HorizontalAlignment="Left" Margin="25,40,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Выбрать группу"/>
+            <ComboBox x:Name="discipline_cb" HorizontalAlignment="Left" Margin="170,40,0,0" VerticalAlignment="Top" Width="135" materialDesign:HintAssist.Hint="Выбрать дисциплину"/>
 
             <Grid HorizontalAlignment="Left" Height="240" Margin="25,95,0,0" VerticalAlignment="Top" Width="280" Background="White">
-                <TextBox Name="test" HorizontalAlignment="Left" Height="23" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Число недель"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные"/>
-                <ComboBox HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Вид п/а" Height="26"/>
+                <TextBox x:Name="sem1_weeks_tb" HorizontalAlignment="Left" Height="23" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Число недель"/>
+                <TextBox x:Name="sem1_hours_tb" HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов"/>
+                <TextBox x:Name="sem1_exam_num_tb" HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные"/>
+                <ComboBox x:Name="sem1_exam_type_cb" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Вид п/а" Height="26"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Семестр 1" VerticalAlignment="Top"/>
 
             </Grid>
             <Grid HorizontalAlignment="Left" Height="240" Margin="345,95,0,0" VerticalAlignment="Top" Width="280" Background="White">
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Число недель"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" materialDesign:HintAssist.Hint="Часов на экзамены и консультации"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные"/>
-                <ComboBox HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Вид п/а"/>
+                <TextBox x:Name="sem2_weeks_tb" HorizontalAlignment="Left" Height="23" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Число недель"/>
+                <TextBox x:Name="sem2_hours_tb" HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов"/>
+                <TextBox x:Name="sem2_exam_hours_tb" HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" materialDesign:HintAssist.Hint="Часов на экзамены и консультации"/>
+                <TextBox x:Name="sem2_exam_num_tb" HorizontalAlignment="Left" Height="23" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные"/>
+                <ComboBox x:Name="sem2_exam_type_cb" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Вид п/а"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Семестр 2" VerticalAlignment="Top"/>
             </Grid>
             <Button Content="Сохранить" HorizontalAlignment="Left" Margin="25,355,0,0" VerticalAlignment="Top" Width="144" Background="#FF5B9BD5" Click="Button_Click"/>
