@@ -32,17 +32,36 @@ namespace StudentCard.View
             {
                 group_cb.Items.Add(group.name_group);
             }
+
             //filling the subject combobox
             List<DistributedDiscipline> b = new List<DistributedDiscipline>(db.DistributedDiscipline.ToList());
             foreach (var dis in b)
             {
                 discipline_cb.Items.Add(dis.Discipline.name_discipline);
             }
+            //filling the exam type cb
+            List<ExamType> c = new List<ExamType>(db.ExamType.ToList());
+            foreach (var et in c)
+            {
+                exam
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
+            Group gr = group_cb.SelectedItem as Group;
+            DistributedDiscipline dd = discipline_cb.SelectedItem as DistributedDiscipline;
+
+            Load a = new Load
+            {
+                ID_group = gr.ID_group,
+                ID_distributed_dis = dd.ID_distrubuted_dis,
+                sem1_weeks = Convert.ToInt32(sem1_weeks_tb),
+                sem1_hours = Convert.ToInt32(sem1_hours_tb),
+                sem1_exam_num = Convert.ToInt32(sem1_exam_num_tb),
+
+            };
         }
     }
 }
