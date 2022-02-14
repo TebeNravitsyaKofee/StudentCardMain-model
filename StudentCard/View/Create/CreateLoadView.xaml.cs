@@ -20,15 +20,24 @@ namespace StudentCard.View
     /// </summary>
     public partial class CreateLoadView : UserControl
     {
-
+        YurecDBEntities db = new YurecDBEntities();
        
        
         public CreateLoadView()
         {
-
             InitializeComponent();
-
-            
+            //filling the group combobox
+            List<Group> a = new List<Group>(db.Group.ToList());
+            foreach (var group in a)
+            {
+                group_cb.Items.Add(group.name_group);
+            }
+            //filling the subject combobox
+            List<DistributedDiscipline> b = new List<DistributedDiscipline>(db.DistributedDiscipline.ToList());
+            foreach (var dis in b)
+            {
+                discipline_cb.Items.Add(dis.Discipline.name_discipline);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

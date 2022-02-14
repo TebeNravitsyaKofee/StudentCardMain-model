@@ -9,7 +9,7 @@
              d:DesignHeight="400" d:DesignWidth="650">
     <Border BorderThickness="4" BorderBrush="Black">
         <Grid Height="auto" Width="auto" Background="#FFDEEBF6">
-            <ComboBox x:Name="group_cb" HorizontalAlignment="Left" Margin="25,40,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Выбрать группу"/>
+            <ComboBox x:Name="group_cb" HorizontalAlignment="Left" Margin="25,40,0,0" VerticalAlignment="Top" Width="120"  materialDesign:HintAssist.Hint="Выбрать группу"/>
             <ComboBox x:Name="discipline_cb" HorizontalAlignment="Left" Margin="170,40,0,0" VerticalAlignment="Top" Width="135" materialDesign:HintAssist.Hint="Выбрать дисциплину"/>
 
             <Grid HorizontalAlignment="Left" Height="240" Margin="25,95,0,0" VerticalAlignment="Top" Width="280" Background="White">
