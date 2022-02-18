@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentCard.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,25 +27,13 @@ namespace StudentCard.View
         public CreateLoadView()
         {
             InitializeComponent();
-            //filling the group combobox
-            List<Group> a = new List<Group>(db.Group.ToList());
-            foreach (var group in a)
-            {
-                group_cb.Items.Add(group.name_group);
-            }
+            group_cb.ItemsSource = db.Group.ToList();
+            discipline_cb.ItemsSource = db.Discipline.ToList();
+            sem1_exam_type_cb.ItemsSource = db.ExamType.ToList();
+            sem2_exam_type_cb.ItemsSource = db.ExamType.ToList();
 
-            //filling the subject combobox
-            List<DistributedDiscipline> b = new List<DistributedDiscipline>(db.DistributedDiscipline.ToList());
-            foreach (var dis in b)
-            {
-                discipline_cb.Items.Add(dis.Discipline.name_discipline);
-            }
-            //filling the exam type cb
-            List<ExamType> c = new List<ExamType>(db.ExamType.ToList());
-            foreach (var et in c)
-            {
-                exam
-            }
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -63,5 +52,7 @@ namespace StudentCard.View
 
             };
         }
+
+
     }
 }

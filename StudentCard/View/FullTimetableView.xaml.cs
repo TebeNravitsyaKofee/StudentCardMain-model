@@ -26,5 +26,7 @@ namespace StudentCard.View
             InitializeComponent();
             func.FillGridWithDayNames(TimetableDG);
         }
+
+        
     }
 }
