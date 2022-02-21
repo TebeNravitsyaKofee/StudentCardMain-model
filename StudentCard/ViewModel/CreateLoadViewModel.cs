@@ -10,12 +10,12 @@ namespace StudentCard.ViewModel
 {
     class CreateLoadViewModel
     {
-        YurecDBEntities db = new YurecDBEntities();
-        public ICommand GroupCBCommand { get; }
+        
+        public ICommand SaveLoadCommand { get; }
 
         public CreateLoadViewModel()
         {
-            //GroupCBCommand = new Command();
+           SaveLoadCommand = new Command(SaveLoad);
         }
         public Group GroupCB{ get; set; }
         public Discipline DisciplineCB { get; set; }
@@ -28,6 +28,27 @@ namespace StudentCard.ViewModel
         public int? Sem2ExamNum { get; set; } = null;
         public int? Sem2ExamHours { get; set; } = null;
         public ExamType Sem2ExamType { get; set; }
+
+        void SaveLoad()
+        {
+            YurecDBEntities db = new YurecDBEntities();
+            Load load = new Load
+            {
+                ID_group = GroupCB.ID_group,
+                ID_distributed_dis = DisciplineCB.ID_discipline,
+                sem1_weeks = Sem1Weeks,
+                sem1_hours = Sem1Hours,
+                sem1_exam_num = Sem1ExamNum,
+                sem1_ID_exam_type = Sem1ExamType.ID_exam_type,
+                sem2_weeks = Sem2Weeks,
+                sem2_hours = Sem2Hours,
+                sem2_exam_num = Sem2ExamNum,
+                sem2_exam_hours = Sem2ExamHours,
+                sem2_ID_exam_type = Sem2ExamType.ID_exam_type
+            };
+            db.Load.Add(load);
+            db.SaveChanges();
+        }
 
     }
 }

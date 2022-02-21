@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,18 +22,22 @@ namespace StudentCard.View
     /// </summary>
     public partial class LoadView : UserControl
     {
-        public string b;
-        
+        YurecDBEntities db = new YurecDBEntities();
+
+
+
         public LoadView()
         {
             InitializeComponent();
-            b = "ловатлва";
+            TimetableDG.ItemsSource = db.Load.ToList();
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
            CreateLoad.Visibility = Visibility.Visible;
-            
+
         }
     }
 }

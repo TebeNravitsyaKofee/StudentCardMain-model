@@ -52,31 +52,29 @@
                     <ColumnDefinition Width="{Binding ElementName=Column11, Path=ActualWidth}" />
                     <ColumnDefinition Width="{Binding ElementName=Column12, Path=ActualWidth}" />
                     <ColumnDefinition Width="{Binding ElementName=Column13, Path=ActualWidth}" />
-                    <ColumnDefinition Width="{Binding ElementName=Column14, Path=ActualWidth}" />
                 </Grid.ColumnDefinitions>
-                <Border Grid.Column="5" Grid.ColumnSpan="4" BorderBrush="Black" HorizontalAlignment="Stretch" BorderThickness="1">
+                <Border Grid.Column="4" Grid.ColumnSpan="4" BorderBrush="Black" HorizontalAlignment="Stretch" BorderThickness="1">
                     <Label HorizontalAlignment="Center" >Семестр 1</Label>
                 </Border>
-                <Border Grid.Column="9" Grid.ColumnSpan="5" BorderBrush="Black" HorizontalAlignment="Stretch" BorderThickness="1">
+                <Border Grid.Column="8" Grid.ColumnSpan="5" BorderBrush="Black" HorizontalAlignment="Stretch" BorderThickness="1">
                     <Label HorizontalAlignment="Center">Семестр 2</Label>
                 </Border>
             </Grid>
 
-            <DataGrid x:Name="TimetableDG" HorizontalAlignment="Stretch" Height="auto" Margin="0,30,0,0" VerticalAlignment="Top" Width="auto">
+            <DataGrid x:Name="TimetableDG" HorizontalAlignment="Stretch" Height="auto" Margin="0,30,0,0" VerticalAlignment="Top" Width="auto"  AutoGenerateColumns="False" ItemsSource="{Binding Path=., Mode=OneWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="Column2" Header="Дисциплина"/>
-                    <DataGridTextColumn x:Name="Column3" Header="Группа"/>
-                    <DataGridTextColumn x:Name="Column4" Header="Количество &#x0a;человек"/>
-                    <DataGridTextColumn x:Name="Column5" Header="Число недель"/>
-                    <DataGridTextColumn x:Name="Column6" Header="Всего часов"/>
-                    <DataGridTextColumn x:Name="Column7" Header="Самостоятельные"/>
-                    <DataGridTextColumn x:Name="Column8" Header="Вид п/а"/>
-                    <DataGridTextColumn x:Name="Column9" Header="Число недель"/>
-                    <DataGridTextColumn x:Name="Column10" Header="Часов на &#x0a;экзам. и конс."/>
-                    <DataGridTextColumn x:Name="Column11" Header="Всего часов"/>
-                    <DataGridTextColumn x:Name="Column12" Header="Самостоятельные"/>
-                    <DataGridTextColumn x:Name="Column13" Header="Вид п/а"/>
-                    <DataGridTextColumn x:Name="Column14" Width="*" Header="Всего часов &#x0a;в учебном году"/>
+                    <DataGridTextColumn x:Name="Column2" Header="Дисциплина" Binding="{Binding DistributedDiscipline.Discipline.name_discipline, UpdateSourceTrigger=PropertyChanged}" />
+                    <DataGridTextColumn x:Name="Column3" Header="Группа" Binding="{Binding Group.name_group, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column4" Header="Число&#x0a;недель" Binding="{Binding sem1_weeks, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column5" Header="Всего&#x0a;часов" Binding="{Binding sem1_hours, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column6" Header="Самост." Binding="{Binding sem1_exam_num, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column7" Header="Вид п/а" Binding="{Binding ExamType.exam_type_name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column8" Header="Число&#x0a;недель" Binding="{Binding sem2_weeks, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column9" Header="Часов на &#x0a;экзам&#x0a;и конс." Binding="{Binding sem2_exam_hours, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column10" Header="Всего&#x0a;часов" Binding="{Binding sem2_hours, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column11" Header="Самост."  Binding="{Binding sem2_exam_num, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column12" Header="Вид п/а"  Binding="{Binding ExamType.exam_type_name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn x:Name="Column13" Width="*" Header="Всего часов &#x0a;в учебном году"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

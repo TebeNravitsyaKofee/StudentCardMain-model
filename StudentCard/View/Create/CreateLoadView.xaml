@@ -18,21 +18,21 @@
 
             <Grid HorizontalAlignment="Left" Height="240" Margin="25,95,0,0" VerticalAlignment="Top" Width="280" Background="White">
                 <TextBox x:Name="sem1_weeks_tb" HorizontalAlignment="Left" Height="23" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Sem1Weeks, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Число недель"  />
-                <TextBox x:Name="sem1_hours_tb" HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов"/>
-                <TextBox x:Name="sem1_exam_num_tb" HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные"/>
+                <TextBox x:Name="sem1_hours_tb" HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов" Text="{Binding Sem1Hours, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="sem1_exam_num_tb" HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные" Text="{Binding Sem1ExamNum, UpdateSourceTrigger=PropertyChanged}"/>
                 <ComboBox x:Name="sem1_exam_type_cb" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Вид п/а" Height="26" SelectedItem="{Binding Sem1ExamType}" DisplayMemberPath="exam_type_name"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Семестр 1" VerticalAlignment="Top"/>
 
             </Grid>
             <Grid HorizontalAlignment="Left" Height="240" Margin="345,95,0,0" VerticalAlignment="Top" Width="280" Background="White">
-                <TextBox x:Name="sem2_weeks_tb" HorizontalAlignment="Left" Height="23" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Число недель"/>
-                <TextBox x:Name="sem2_hours_tb" HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов"/>
-                <TextBox x:Name="sem2_exam_hours_tb" HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" materialDesign:HintAssist.Hint="Часов на экзамены и консультации"/>
-                <TextBox x:Name="sem2_exam_num_tb" HorizontalAlignment="Left" Height="23" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные"/>
+                <TextBox x:Name="sem2_weeks_tb" HorizontalAlignment="Left" Height="23" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Число недель" Text="{Binding Sem2Weeks, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="sem2_hours_tb" HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Всего часов" Text="{Binding Sem2Hours, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="sem2_exam_hours_tb" HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" materialDesign:HintAssist.Hint="Часов на экзамены и консультации" Text="{Binding Sem2ExamHours, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="sem2_exam_num_tb" HorizontalAlignment="Left" Height="23" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Самостоятельные" Text="{Binding Sem2ExamNum, UpdateSourceTrigger=PropertyChanged}"/>
                 <ComboBox x:Name="sem2_exam_type_cb" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="120" materialDesign:HintAssist.Hint="Вид п/а" SelectedItem="{Binding Sem2ExamType}" DisplayMemberPath="exam_type_name"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Семестр 2" VerticalAlignment="Top"/>
             </Grid>
-            <Button Content="Сохранить" HorizontalAlignment="Left" Margin="25,355,0,0" VerticalAlignment="Top" Width="144" Background="#FF5B9BD5" Click="Button_Click"/>
+            <Button Content="Сохранить" HorizontalAlignment="Left" Margin="25,355,0,0" VerticalAlignment="Top" Width="144" Background="#FF5B9BD5" Click="Button_Click" Command="{Binding SaveLoadCommand}"/>
 
         </Grid>
     </Border>

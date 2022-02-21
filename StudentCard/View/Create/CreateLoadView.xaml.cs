@@ -1,7 +1,10 @@
-﻿using StudentCard.ViewModel;
+﻿using StudentCard.Core;
+using StudentCard.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,11 +22,16 @@ namespace StudentCard.View
     /// <summary>
     /// Логика взаимодействия для CreateLoadView.xaml
     /// </summary>
-    public partial class CreateLoadView : UserControl
+    public partial class CreateLoadView : UserControl, INotifyPropertyChanged
     {
         YurecDBEntities db = new YurecDBEntities();
-       
-       
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+
         public CreateLoadView()
         {
             InitializeComponent();
@@ -39,18 +47,7 @@ namespace StudentCard.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
-            Group gr = group_cb.SelectedItem as Group;
-            DistributedDiscipline dd = discipline_cb.SelectedItem as DistributedDiscipline;
-
-            Load a = new Load
-            {
-                ID_group = gr.ID_group,
-                ID_distributed_dis = dd.ID_distrubuted_dis,
-                sem1_weeks = Convert.ToInt32(sem1_weeks_tb),
-                sem1_hours = Convert.ToInt32(sem1_hours_tb),
-                sem1_exam_num = Convert.ToInt32(sem1_exam_num_tb),
-
-            };
+            OnPropertyChanged();
         }
 
 
