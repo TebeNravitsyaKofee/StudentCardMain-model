@@ -39,5 +39,7 @@ namespace StudentCard.View
            CreateLoad.Visibility = Visibility.Visible;
 
         }
+
+        
     }
 }

@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:StudentCard.View"
+             xmlns:viewModel="clr-namespace:StudentCard.ViewModel"
              mc:Ignorable="d" 
               d:DesignHeight="768" d:DesignWidth="1024">
+    <UserControl.DataContext>
+        <viewModel:CreateLoadViewModel/>
+    </UserControl.DataContext>
 
     <Grid Height="auto" Width="auto" Background="White">
         
@@ -27,7 +31,7 @@
             </StackPanel>
             <Grid VerticalAlignment="Bottom" Height="68" Margin="10,0,10,10">
                 <Button Content="Добавить нагрузку" VerticalAlignment="Top" Background="#FF5B9BD5" Click="Button_Click"/>
-                <Button Content="Изменить нагрузку" VerticalAlignment="Bottom" Background="#FF5B9BD5"/>
+                <Button Content="Изменить нагрузку" VerticalAlignment="Bottom" Background="#FF5B9BD5" Command="{Binding DeleteLoadCommand}" CommandTarget="{Binding ElementName=TimetableDG}" CommandParameter="{Binding P}"/>
             </Grid>
         </Grid>
         <Grid Name="TimetableGrid" Height="auto" Background="White" Margin="170,130,0,0">
@@ -61,7 +65,7 @@
                 </Border>
             </Grid>
 
-            <DataGrid x:Name="TimetableDG" HorizontalAlignment="Stretch" Height="auto" Margin="0,30,0,0" VerticalAlignment="Top" Width="auto"  AutoGenerateColumns="False" ItemsSource="{Binding Path=., Mode=OneWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" >
+            <DataGrid x:Name="TimetableDG" HorizontalAlignment="Stretch" Height="auto" Margin="0,30,0,0" VerticalAlignment="Top" Width="auto"  AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="Column2" Header="Дисциплина" Binding="{Binding DistributedDiscipline.Discipline.name_discipline, UpdateSourceTrigger=PropertyChanged}" />
                     <DataGridTextColumn x:Name="Column3" Header="Группа" Binding="{Binding Group.name_group, UpdateSourceTrigger=PropertyChanged}"/>

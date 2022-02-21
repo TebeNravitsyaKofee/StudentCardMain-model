@@ -24,5 +24,7 @@ namespace StudentCard.View
         {
             InitializeComponent();
         }
+
+
     }
 }

@@ -1,21 +1,33 @@
-﻿using System;
+﻿using StudentCard.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace StudentCard.ViewModel
 {
-    class CreateLoadViewModel
+    class CreateLoadViewModel : ObservableObject
     {
+        private DataGrid dgg;
         
         public ICommand SaveLoadCommand { get; }
+        public ICommand DeleteLoadCommand { get; }
+        public ICommand DG { get; }
+        public void dg()
+        {
+
+        }
 
         public CreateLoadViewModel()
         {
-           SaveLoadCommand = new Command(SaveLoad);
+            SaveLoadCommand = new Command(SaveLoad);
+
+            DeleteLoadCommand = new Command(DeleteLoad);
+            DG = new Command(dg);
         }
         public Group GroupCB{ get; set; }
         public Discipline DisciplineCB { get; set; }
@@ -48,6 +60,11 @@ namespace StudentCard.ViewModel
             };
             db.Load.Add(load);
             db.SaveChanges();
+        }
+
+        public void DeleteLoad()
+        {
+            Load a = dgg.SelectedItem as Load;
         }
 
     }
